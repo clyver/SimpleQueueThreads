@@ -1,5 +1,9 @@
 import timeit
 
+"""
+A stock of varying computational-intensive functions.
+"""
+
 
 def recursive_fib(n):
     if n == 0 or n == 1:
@@ -35,8 +39,11 @@ def iterative_fib(n):
     return a
 
 
-def demonstrate_load():
-    print "* Running 3 variants of fibonacci, set to calculate the 37th fibonacci number..."
+def demonstrate_load(n):
+    print "* Running 3 variants of fibonacci, set to calculate the {}th fibonacci number...".format(
+        n
+    )
+
     test_scenarios = [
         ('naive recursive implementation', recursive_fib),
         ('recursive implementation with a cache', recursive_fib_cached),
@@ -47,8 +54,8 @@ def demonstrate_load():
         print "#" * 20
         print "Running {} ...".format(test_description)
         start_time = timeit.default_timer()
-        fib_test(37)
+        fib_test(n)
         end_time = timeit.default_timer()
         print "{} took {} seconds to complete".format(test_description, end_time-start_time)
 
-# demonstrate_load()
+# demonstrate_load(37)
