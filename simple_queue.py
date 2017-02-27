@@ -38,8 +38,8 @@ print "* {} workers established to tackle queue...".format(num_workers)
 
 q.join()
 
-print "* Work complete!"
 end_time = default_timer()
+print "* Work complete!"
 t_delta = end_time - start_time
 print "*" * 80
 print "Summary: {} workers completed {} tasks in {} seconds".format(num_workers, num_tasks, t_delta)

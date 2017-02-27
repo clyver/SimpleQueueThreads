@@ -16,6 +16,6 @@ def do_work(task, weight, thread_name):
 fast_thread = Thread(target=do_work, args=(fast_task, 30, "FastThread"))
 slow_thread = Thread(target=do_work, args=(slow_task, 30, "SlowThread"))
 
-# Fast thread will finish before the slow thread, even if got a late start.
+# Fast thread should finish before the slow thread, even if it got a late start.
 slow_thread.start()
 fast_thread.start()
